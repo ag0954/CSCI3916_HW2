@@ -81,6 +81,7 @@ router.route('/movies')
         var o = getJSONObjectForMovieRequirement(req);
         o.status = 200;
         o.message = "GET movies";
+        o.query = req.query;
         res.json(o);
     })
     .post((req, res) => {
@@ -89,6 +90,7 @@ router.route('/movies')
         // Returns a JSON object with status, message, headers, query, and env.
         var o = getJSONObjectForMovieRequirement(req);
         o.status = 201;
+        o.query = req.query
         o.message = "movie saved";
         res.status(201).json(o);
     })
@@ -98,6 +100,7 @@ router.route('/movies')
         // Returns a JSON object with status, message, headers, query, and env.
         var o = getJSONObjectForMovieRequirement(req);
         o.status = 200;
+        o.query = req.query
         o.message = "movie updated";
         res.json(o);
     })
@@ -107,6 +110,7 @@ router.route('/movies')
         // Returns a JSON object with status, message, headers, query, and env.
         var o = getJSONObjectForMovieRequirement(req);
         o.status = 200;
+        o.query = req.query
         o.message = "movie deleted";
         res.json(o);
     })
